@@ -36,31 +36,47 @@
   <customUpdateUI>false</customUpdateUI>
   <allowBrowserInvocation>false</allowBrowserInvocation>
   <versionLabel>Hi</versionLabel>
-  <iPhone>
-    <InfoAdditions><![CDATA[
-  <key>UIDeviceFamily</key>
-  <array>
-    <string>1</string>
-    <string>2</string>
-  </array>
-]]></InfoAdditions>
-    <requestedDisplayResolution>high</requestedDisplayResolution>
-  </iPhone>
   <android>
-    <manifestAdditions><![CDATA[<manifest>
-<uses-permission android:name="android.permission.INTERNET"/>
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-<uses-permission android:name="android.permission.RECORD_AUDIO"/>
-<uses-permission android:name="android.permission.WAKE_LOCK"/>
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-	<activity android:name=".MyUriActivity">
-		<intent-filter>
-			<action android:name="android.intent.action.VIEW" />
-			<category android:name="android.intent.category.DEFAULT" />
-			<category android:name="android.intent.category.BROWSABLE" />
-			<data android:scheme="myapp" android:host="path" />
-		</intent-filter>
-	   </activity>
-</manifest>]]></manifestAdditions>
-  </android>
+	<manifestAdditions><![CDATA[
+		<manifest android:installLocation="auto">
+			<uses-permission android:name="android.permission.INTERNET"/>
+			<application>
+				<activity>
+					<intent-filter>
+						<action android:name="android.intent.action.MAIN"/>
+						<category android:name="android.intent.category.LAUNCHER"/>
+					</intent-filter>
+					<intent-filter>
+						<action android:name="android.intent.action.VIEW"/>
+						<category android:name="android.intent.category.BROWSABLE"/>
+						<category android:name="android.intent.category.DEFAULT"/>
+						<data android:scheme="awesomeapp"/> 
+					</intent-filter>
+				</activity>
+			</application>
+		</manifest>
+	]]></manifestAdditions>
+</android>
+
+<iPhone>
+    <InfoAdditions><![CDATA[
+	<key>UIDeviceFamily</key>
+	<array>
+		<string>1</string>
+		<string>2</string>
+	</array>
+    <key>CFBundleURLTypes</key>
+		<array>
+			<dict>
+				<key>CFBundleURLName</key>
+				<string>OpenFromURI</string> <!-- Change this with your app id -->
+				<key>CFBundleURLSchemes</key>
+				<array>
+					<string>awesomeapp</string>
+				</array>
+			</dict>
+		</array>
+	]]></InfoAdditions>
+   <requestedDisplayResolution>high</requestedDisplayResolution>
+</iPhone>
 </application>
