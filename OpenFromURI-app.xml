@@ -16,7 +16,7 @@
 	<text xml:lang="ja">Japanese App name goes here</text>
 	</name>
 -->
-<application xmlns="http://ns.adobe.com/air/application/22.0">
+<application xmlns="http://ns.adobe.com/air/application/19.0">
   <id>OpenFromURI</id>
   <versionNumber>1.0</versionNumber>
   <filename>OpenFromURI</filename>
@@ -37,7 +37,7 @@
   <allowBrowserInvocation>false</allowBrowserInvocation>
   <versionLabel>Hi</versionLabel>
   <android>
-	<manifestAdditions><![CDATA[
+	  <manifestAdditions><![CDATA[
 		<manifest android:installLocation="auto">
 			<uses-permission android:name="android.permission.INTERNET"/>
 			<application>
@@ -58,7 +58,7 @@
 	]]></manifestAdditions>
 </android>
 
-<iPhone>
+  <iPhone>
     <InfoAdditions><![CDATA[
 	<key>UIDeviceFamily</key>
 	<array>
